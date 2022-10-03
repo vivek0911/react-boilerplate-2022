@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "baseUrl": "./src",
+    "jsx": "react",
+    "paths": {
+      "@asset/*": ["./asset/*"],
+      "@atom/*": ["./component/atom*"],
+      "@molecule/*": ["./component/molecule*"],
+      "@organism/*": ["./component/organism*"],
+      "@template/*": ["./component/template*"],
+      "@lib/*": ["./lib/*"],
+      "@store/*": ["./store/*"],
+      "@util/*": ["./util/*"],
+      "@view/*": ["./view/*"]
+    }
+  },
+  "exclude": ["node_modules", "**/node_modules/*", "build"]
+}

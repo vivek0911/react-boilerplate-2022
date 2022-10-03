@@ -6,22 +6,25 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "qs": "^6.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "prepare": "husky install",
+    "start": "RUNTIME_VERSION=$(git rev-parse --short HEAD) react-scripts start",
+    "build": "RUNTIME_VERSION=$(git rev-parse --short HEAD) NODE_OPTIONS=--max_old_space_size=3072 react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "lint:check": "NODE_OPTIONS='--max-old-space-size=3072' eslint . --ext=js,jsx --no-color",
+    "lint:fix": "NODE_OPTIONS='--max-old-space-size=3072' eslint . --ext=js,jsx --fix",
+    "audit:fix": "npm audit fix",
+    "prettier:check": "prettier --check \"src/**/*.{js,jsx}\"",
+    "prettier:fix": "prettier --write \"src/**/*.{js,jsx}\""
   },
   "browserslist": {
     "production": [
@@ -34,5 +37,23 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-extra-rules": "0.0.0-development",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^27.0.4",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-lodash": "^7.4.0",
+    "eslint-plugin-no-inline-styles": "^1.0.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3"
   }
 }

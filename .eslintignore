@@ -1,0 +1,7 @@
+!.eslintrc.js
+documentation/
+build/
+setupTests.js
+node_modules
+.git
+dist

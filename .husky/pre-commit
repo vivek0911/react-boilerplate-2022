@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+print_result() {
+  if [ "$?" == "0" ]; then
+    echo "\n=== OK ==="
+  fi
+}
+
+echo "\n\n=========================="
+echo     '| Running code formatter |'
+echo     '=========================='
+npx pretty-quick --staged
+print_result
+
+echo "\n\n========================"
+echo     '| Running lint checker |'
+echo     '========================'
+npm run lint:check
+print_result
+
+echo "\n\n======================"
+echo     '| Running unit tests |'
+echo     '======================'
+CI=true npm test --bail
+print_result

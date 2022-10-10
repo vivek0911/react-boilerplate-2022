@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  /* THEME COLORS */
+  --color-white-light: #ffffff;
+  --color-white: #f6f6f7;
+  --color-black: #242424;
+  --color-blue-dark: #17243e;
+  --color-blue-light: #2a4478;
+  --color-teal: #00aaa7;
+  --color-orange: #d25917;
+  --color-gray: #767575;
+  --color-gray-light: #929cad;
+  --color-gray-lightest: #f5f5f5;
+}

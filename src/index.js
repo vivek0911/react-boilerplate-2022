@@ -2,12 +2,10 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { Provider } from 'react-redux'
 
 import App from './App'
 import ErrorBoundary from './ErrorBoundary'
 import reportWebVitals from './reportWebVitals'
-import store from '@store'
 import './index.css'
 
 const queryClient = new QueryClient({
@@ -23,17 +21,15 @@ const queryClient = new QueryClient({
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <QueryClientProvider client={queryClient}>
-        <ErrorBoundary>
-          <React.Suspense fallback={<h1>Loading ...</h1>}>
-            <App />
-          </React.Suspense>
-        </ErrorBoundary>
+    <QueryClientProvider client={queryClient}>
+      <ErrorBoundary>
+        <React.Suspense fallback={<h1>Loading ...</h1>}>
+          <App />
+        </React.Suspense>
+      </ErrorBoundary>
 
-        <ReactQueryDevtools initialIsOpen position="bottom-right" />
-      </QueryClientProvider>
-    </Provider>
+      <ReactQueryDevtools initialIsOpen position="bottom-right" />
+    </QueryClientProvider>
   </React.StrictMode>
 )
 

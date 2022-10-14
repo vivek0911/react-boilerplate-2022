@@ -1,6 +1,8 @@
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
+import { childrenProp } from '@util/prop-types'
+
 import Spinner from '@atom/spinner'
 
 export const ButtonVariant = {
@@ -67,14 +69,6 @@ function Button({
     </button>
   )
 }
-
-const childProp = PropTypes.oneOfType([PropTypes.element, PropTypes.node])
-
-const childrenProp = PropTypes.oneOfType([
-  PropTypes.element,
-  PropTypes.node,
-  PropTypes.arrayOf(childProp),
-])
 
 Button.propTypes = {
   'data-test': PropTypes.string,

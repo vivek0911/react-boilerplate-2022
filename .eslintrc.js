@@ -55,7 +55,7 @@ module.exports = {
             position: 'before',
           },
           { pattern: '@lib/**', group: 'parent', position: 'before' },
-          { pattern: '@store/**', group: 'parent', position: 'before' },
+          { pattern: '@services/**', group: 'parent', position: 'before' },
           { pattern: '@util/**', group: 'parent', position: 'before' },
           { pattern: '@layout/**', group: 'parent', position: 'before' },
           { pattern: '@atom/**', group: 'parent' },
@@ -136,7 +136,7 @@ module.exports = {
       alias: {
         map: [
           ['@lib', './src/lib'],
-          ['@store', './src/store'],
+          ['@services', './src/services'],
           ['@util', './src/util'],
           ['@atom', './src/component/atom'],
           ['@molecule', './src/component/molecule'],

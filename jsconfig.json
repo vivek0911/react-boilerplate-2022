@@ -10,7 +10,7 @@
       "@organism/*": ["./component/organism/*"],
       "@template/*": ["./component/template/*"],
       "@lib/*": ["./lib/*"],
-      "@store/*": ["./store/*"],
+      "@services/*": ["./services/*"],
       "@util/*": ["./util/*"],
       "@view/*": ["./view/*"]
     }

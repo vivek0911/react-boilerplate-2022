@@ -1,5 +1,6 @@
-/* eslint-disable react/prop-types */
 import React from 'react'
+
+import { childrenProp } from '@util/prop-types'
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -10,7 +11,6 @@ class ErrorBoundary extends React.Component {
   }
   static getDerivedStateFromError() {
     // Update state so the next render will show the fallback UI
-
     return { hasError: true }
   }
   componentDidCatch() {
@@ -20,7 +20,7 @@ class ErrorBoundary extends React.Component {
   render() {
     // Check if the error is thrown
     if (this.state.hasError) {
-      // You can render any custom fallback UI
+      // render custom fallback UI
       return (
         <div>
           <h2>Oops, there is an error!</h2>
@@ -35,9 +35,16 @@ class ErrorBoundary extends React.Component {
     }
 
     // Return children components in case of no error
-
     return this.props.children
   }
+}
+
+ErrorBoundary.propTypes = {
+  children: childrenProp,
+}
+
+ErrorBoundary.defaultProps = {
+  children: null,
 }
 
 export default ErrorBoundary

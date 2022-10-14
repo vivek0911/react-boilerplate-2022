@@ -9,7 +9,7 @@
       "@molecule/*": ["./component/molecule/*"],
       "@organism/*": ["./component/organism/*"],
       "@template/*": ["./component/template/*"],
-      "@lib/*": ["./lib/*"],
+      "@hooks/*": ["./hooks/*"],
       "@services/*": ["./services/*"],
       "@util/*": ["./util/*"],
       "@view/*": ["./view/*"]

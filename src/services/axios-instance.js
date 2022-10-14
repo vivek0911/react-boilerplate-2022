@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = process.env.API_ROOT_URL
+const baseURL = process.env.REACT_APP_API_URL
 
 const axiosInstance = axios.create({
   baseURL,
@@ -8,7 +8,7 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use(
   function (config) {
-    const token = 'Secret Token !!'
+    const token = undefined
     return {
       ...config,
       headers: {

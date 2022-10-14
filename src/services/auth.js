@@ -1,9 +1,7 @@
-import { useQuery } from '@tanstack/react-query'
-
 import axiosClient from '@services/axios-instance'
-import { apiRoutes } from '@services/index'
 
-import cacheKeys from '@util/cache-keys'
+import { apiRoutes } from '@services'
 
-export const useGetTodos = () =>
-  useQuery([cacheKeys.todos], () => axiosClient.get(apiRoutes.getPosts))
+export const login = (payload) => axiosClient.post(apiRoutes.login, payload)
+
+export const todos = () => axiosClient.get(apiRoutes.getPosts)

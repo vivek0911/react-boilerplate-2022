@@ -2,6 +2,8 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 
+import { useLogin } from '@hooks/auth'
+
 import Button, { ButtonVariant } from '@atom/button'
 import Input from '@atom/input'
 
@@ -16,8 +18,11 @@ function App() {
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) })
 
-  // eslint-disable-next-line no-console
-  const onSubmit = (data) => console.log(data)
+  const { mutate, isLoading } = useLogin()
+
+  const onSubmit = ({ email, password }) => {
+    mutate({ userName: email, password })
+  }
 
   return (
     <div className="pt-6 mx-auto max-w-lg">
@@ -25,13 +30,13 @@ function App() {
         configure your whole app from here
       </div>
       <Button variant={ButtonVariant.Teal}>Normal Teal Btn</Button>
-      <br />
+      {/* <br />
       <Button isLoading>Loading</Button>
       <br />
       <Button variant={ButtonVariant.Blue}>Blue variant</Button>
       <br />
       <Button disabled>Disable</Button>
-      <br />
+      <br /> */}
       <form onSubmit={handleSubmit(onSubmit)}>
         <Input
           error={errors.email?.message || ''}
@@ -47,7 +52,9 @@ function App() {
           register={register}
           type="password"
         />
-        <Button type="submit">Submit</Button>
+        <Button isLoading={isLoading} type="submit">
+          Submit
+        </Button>
       </form>
     </div>
   )

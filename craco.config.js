@@ -8,7 +8,7 @@ module.exports = {
       '@molecule': path.resolve(__dirname, 'src/component/molecule'),
       '@organism': path.resolve(__dirname, 'src/component/organism'),
       '@template': path.resolve(__dirname, 'src/component/template'),
-      '@lib': path.resolve(__dirname, 'src/lib/'),
+      '@hooks': path.resolve(__dirname, 'src/hooks/'),
       '@services': path.resolve(__dirname, 'src/services/'),
       '@util': path.resolve(__dirname, 'src/util/'),
       '@view': path.resolve(__dirname, 'src/view/'),

@@ -124,6 +124,6 @@ export const HttpStatus = {
 }
 
 export const apiRoutes = {
-  login: '/login',
+  login: '/auth/login',
   register: '/register',
 }
